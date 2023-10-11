@@ -126,6 +126,15 @@ function frecuencia(lista)
     #print('\n')
     
 		p = posición(palabra, F)
+
+    print(F)
+     print('\n')
+    print(palabra)
+    print(' ')
+    print(p)
+    print('\n')
+    print('\n')
+    
 		if p[1] == true
 			F[p[2]][2] += 1
 		else
@@ -134,7 +143,8 @@ function frecuencia(lista)
 			#Agrego un elemento extra a la lista y recorro todos los elementos posteriores a la palabra que quiero agragar (abro el espacio)
 			i = length(F)
 			while i > p[2]
-				F[i] = F[i-1]
+				F[i][1] = F[i-1][1]
+        F[i][2] = F[i-1][2]
 				i = i - 1
         #print(i)
         #print(' ')
