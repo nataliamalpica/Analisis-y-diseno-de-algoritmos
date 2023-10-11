@@ -108,32 +108,19 @@ function frecuencia(lista)
   if tam > 0
     push!(F, [lista[1], 1])
   end
-    #print(1)
-    #print(' ')
-    #print(F)
-    #print('\n')
+#Primero verifico que la lista de palabras no esté vacía y de ser así agrego la primera palabra a la lista de frecuencia con frecuencia 1 hasta el momento.
 
+#Ahora busco las palabras en la lista de frecuencia empezando por la segunda. Nota que si la lista de palbras tenía elementos, entonce la lista de frecuencia no va a estar vacía
+#(pues ya agregué el primer elemento) y si está vacía, el ciclo nunca empieza ya que el tamaño de la lista de palabras es menor que el iterado inicializado en 2.
   j = 2
-	while j <= tam
+ while j <= tam
     
-    palabra = lista[j]
+		palabra = lista[j]
 
-    #print(j)
-    #print(' ')
-    #print(palabra)
-    #print(' ')
-    #print(F)
-    #print('\n')
     
 		p = posición(palabra, F)
 
-    print(F)
-     print('\n')
-    print(palabra)
-    print(' ')
-    print(p)
-    print('\n')
-    print('\n')
+  
     
 		if p[1] == true
 			F[p[2]][2] += 1
@@ -146,17 +133,12 @@ function frecuencia(lista)
 				F[i][1] = F[i-1][1]
         F[i][2] = F[i-1][2]
 				i = i - 1
-        #print(i)
-        #print(' ')
-        #print(F)
-        #print('\n')
+        
 			end
-      #print(p[2])
-      #print('\n')
+     
 			F[p[2]][1] = palabra
 			F[p[2]][2] = 1
-      #print(F)
-      #print('\n')
+  
 		end
 
     j += 1
